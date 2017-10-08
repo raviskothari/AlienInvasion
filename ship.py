@@ -1,8 +1,10 @@
 import pygame
+from pygame.sprite import Sprite
 
-class Ship():
+class Ship(Sprite):
 
     def __init__(self, ai_settings, screen):
+        super(Ship, self).__init__()
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -34,3 +36,7 @@ class Ship():
         elif self.moving_left == True:
             if self.moving_left and self.rect.left > self.screen_rect.left:
                 self.rect.centerx -= self.ai_settings.ship_speed_factor
+
+    def center_ship(self):
+        #Center the ship
+        self.center = self.screen_rect.centerx

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys, pygame
 import game_functions as gf
 
